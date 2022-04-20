@@ -1,3 +1,9 @@
 body{
-    color: crimson;
+    background-color: darkseagreen;
+}
+ 
+main{
+    display: flex;
+    height: 150px;
+    
 }
