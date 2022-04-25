@@ -4,6 +4,10 @@ body{
  
 main{
     display: flex;
-    height: 150px;
-    
+    justify-content: space-evenly;
+}
+
+img{
+    height: 375px;
+    width: 375px;
 }
