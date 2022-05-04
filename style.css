@@ -1,6 +1,10 @@
 body{
     background-color: darkseagreen;
 }
+
+h1{
+    text-align: center;
+}
  
 main{
     display: flex;
@@ -10,4 +14,5 @@ main{
 img{
     height: 375px;
     width: 375px;
+    border: white;
 }

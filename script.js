@@ -39,41 +39,23 @@ Image.prototype.renderImage = function(img, h2){
 }
  
 Image.allImages.push(new Image('Suitcase ', './images/bag.jpg'));
- 
 Image.allImages.push(new Image('Banana slicer', './images/banana.jpg'));
- 
 Image.allImages.push(new Image('Tablet-toilet paper holder', './images/bathroom.jpg'));
- 
 Image.allImages.push(new Image('Toe-Boots', './images/boots.jpg'));
- 
 Image.allImages.push(new Image('Breakfast Maker', './images/breakfast.jpg'));
- 
 Image.allImages.push(new Image('Trypophobia Bubblegum', './images/bubblegum.jpg'));
- 
 Image.allImages.push(new Image('Odd Chair', './images/chair.jpg'));
- 
 Image.allImages.push(new Image('Cthulhu', './images/cthulhu.jpg'));
- 
 Image.allImages.push(new Image('Dog-Duck', './images/dog-duck.jpg'));
- 
 Image.allImages.push(new Image('Dragon-Meat', './images/dragon.jpg'));
- 
 Image.allImages.push(new Image('Pen utensils', './images/pen.jpg'));
- 
 Image.allImages.push(new Image('Pet-sweep', './images/pet-sweep.jpg'));
- 
 Image.allImages.push(new Image('Pizza Scissors', './images/scissors.jpg'));
- 
 Image.allImages.push(new Image('Shark', './images/shark.jpg'));
- 
 Image.allImages.push(new Image('Sweep', './images/sweep.png'));
- 
 Image.allImages.push(new Image('Tauntaun', './images/tauntaun.jpg'));
- 
 Image.allImages.push(new Image('Unicorn-Meat', './images/unicorn.jpg'));
- 
-Image.allImages.push(new Image('Water-Can', './images/water-can.jpg'));
- 
+Image.allImages.push(new Image('Water-Can', './images/water-can.jpg'))
 Image.allImages.push(new Image('Wine-Glass', './images/wine-glass.jpg'));
  
 function changethreeimages() {
@@ -100,6 +82,65 @@ function renderImage() {
    pic2.renderImage(secondpicElement, secondPicTitle);
    pic3.renderImage(thirdpicElement, thirdPicTitle);
 }
+
+function putImagesInStorage(){
+   let stringify = JSON.stringify(Image.allImages);
+   if (stringify = []){
+      localStorage.setItem('image', stringArray);
+   }
+   else (localStorage.setItem('image', stringArray))
+}
+
+function putImagesInStorage() {
+   let stringify = JSON.stringify(Image.allImages);
+   if (stringify = []){
+       localStorage.setItem('image', stringArray);
+   }
+   else (localStorage.setItem('image', stringArray))
+}
+ 
+function getImagesFromStorage() {
+let storedImage = localStorage.getItem('image');
+if(storedImage){
+   let newImage = JSON.parse(storedImage);
+   for(let image of newImage){
+       let myNewImage = new Image(image.name, image.imgPath, image.clicks, image.view);
+   }
+}   
+}
+ 
+function clickImage(e) {
+   let imageClicked = e.target.id;
+   if(imageClicked === 'pic1' || imageClicked === 'pic2' || imageClicked === 'pic3'){
+       count++;
+   }
+   if(imageClicked === 'pic1'){
+       pic1.clicks++;
+   }
+   if(imageClicked === 'pic2'){
+       pic2.clicks++;
+   }
+   if(imageClicked === 'pic3'){
+       pic3.clicks++;
+   }
+   if (count ===5){
+       for(let img of Image.allImages){
+           console.log(img.name + "Was Clicked on" + img.clicks + " Was viewed " + img.views)
+       }
+   }
+ 
+ 
+getImagesFromStorage();
+changethreeimages();
+renderImage();
+   }
+ 
+picContainerElement.addEventListener('click', clickImage );
+ 
+getImagesFromStorage();
+changethreeimages();
+renderImage();
+
  
  
 changethreeimages();
