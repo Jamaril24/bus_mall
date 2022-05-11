@@ -1,18 +1,27 @@
 body{
     background-color: darkseagreen;
 }
-
 h1{
     text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-left: 40px;
 }
  
 main{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    justify-content:space-between
+    
+
 }
 
 img{
+    display: block;
+    margin-left: 75px;
     height: 375px;
-    width: 375px;
-    border: white;
+    width: 400px;
+    border: solid black;
 }
